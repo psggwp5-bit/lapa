@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лапа помощи — волонтёры для бездомных кошек и собак</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= ШАПКА ================= -->
+<header class="header">
+  <nav class="container nav" aria-label="Основная навигация">
+    <a href="#top" class="logo">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><ellipse cx="20" cy="27" rx="10" ry="8.5"/><circle cx="8.5" cy="17" r="4.2"/><circle cx="15" cy="9.5" r="4.4"/><circle cx="25" cy="9.5" r="4.4"/><circle cx="31.5" cy="17" r="4.2"/></g></svg>
+      Лапа помощи
+    </a>
+    <ul class="nav-links">
+      <li><a href="#pets">Подопечные</a></li>
+      <li><a href="#food">Сбор на корм</a></li>
+      <li><a href="#volunteer">Волонтёрство</a></li>
+      <li><a href="#game">Игра</a></li>
+    </ul>
+    <button class="btn btn-donate btn-sm" type="button" data-open-donate>Задонатить</button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ================= ГЛАВНЫЙ ЭКРАН ================= -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Каждому хвосту — свой дом</h1>
+        <p class="lead">«Лапа помощи» — команда волонтёров. Мы забираем кошек и собак с улицы, лечим, кормим и ищем им хозяев. Заберите питомца домой или помогите кормом: даже 100 ₽ — это обед для одного кота.</p>
+        <div class="actions">
+          <a href="#pets" class="btn btn-adopt">Приютить питомца</a>
+          <button class="btn btn-donate" type="button" data-open-donate>Задонатить на корм</button>
+        </div>
+        <p class="fact">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 20.5s-7.6-4.7-9.4-9.6C1.5 7.6 3.6 4.5 7 4.5c2 0 3.6 1.1 5 3 1.4-1.9 3-3 5-3 3.4 0 5.5 3.1 4.4 6.4-1.8 4.9-9.4 9.6-9.4 9.6z"/></svg>
+          С 2019 года дом нашли 312 животных. Сейчас ждут 42.
+        </p>
+      </div>
+
+      <!-- Фото, сложенные в форму лапы -->
+      <div class="paw" aria-hidden="true">
+        <div class="toe toe-1"></div>
+        <div class="toe toe-2"><img src="https://images.unsplash.com/photo-1495360010541-f48722b34f7d?auto=format&fit=crop&w=300&h=300&q=80" alt="Кошка" data-fallback="🐱"></div>
+        <div class="toe toe-3"><img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=300&h=300&q=80" alt="Кот" data-fallback="🐱"></div>
+        <div class="toe toe-4"></div>
+        <div class="paw-pad"><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&h=600&q=80" alt="Две собаки бегут по траве" data-fallback="🐶"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ПОДОПЕЧНЫЕ ================= -->
+  <section class="section" id="pets">
+    <div class="container">
+      <div class="section-head">
+        <h2>Ищут дом</h2>
+        <p class="lead">Все привиты, обработаны от паразитов и осмотрены ветеринаром. Нажмите «Приютить» — координатор позвонит и договорится о знакомстве.</p>
+      </div>
+
+      <div class="filters" role="group" aria-label="Кого показать">
+        <button class="chip" type="button" data-filter="all" aria-pressed="true">Все</button>
+        <button class="chip" type="button" data-filter="cat" aria-pressed="false">Кошки</button>
+        <button class="chip" type="button" data-filter="dog" aria-pressed="false">Собаки</button>
+      </div>
+
+      <div class="pets" id="petsGrid"></div>
+
+      <h3 class="steps-title">Как забрать питомца домой</h3>
+      <ol class="steps">
+        <li><b>Оставьте заявку</b><span>Кнопка «Приютить» есть на карточке каждого питомца.</span></li>
+        <li><b>Познакомьтесь</b><span>Приезжайте в приют или на встречу с волонтёром.</span></li>
+        <li><b>Подпишите договор</b><span>Бесплатно. Это договор об ответственном содержании.</span></li>
+        <li><b>Заберите домой</b><span>Мы на связи и поможем с адаптацией.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ================= СБОР НА КОРМ ================= -->
+  <section class="section band" id="food">
+    <div class="container food-grid">
+      <div>
+        <h2>Сбор на корм на ноябрь</h2>
+        <p class="lead">У нас 42 подопечных, и за месяц они съедают около 600 кг корма. Все переводы идут на закупку, а фото чеков мы публикуем в отчётах.</p>
+
+        <div class="progress" role="progressbar" aria-label="Собрано на корм" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <p class="progress-text">
+          <span>Собрано <b id="raised">0 ₽</b></span>
+          <span>Цель <b id="goal">0 ₽</b></span>
+        </p>
+
+        <dl class="impact">
+          <div><dt>100 ₽</dt><dd>обед для одного кота</dd></div>
+          <div><dt>500 ₽</dt><dd>неделя сытой жизни для щенка</dd></div>
+          <div><dt>1 500 ₽</dt><dd>мешок корма на 10 кг</dd></div>
+        </dl>
+
+        <button class="btn btn-donate" type="button" data-open-donate>Задонатить на корм</button>
+      </div>
+      <div class="bowl">
+        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=700&h=700&q=80" alt="Собака смотрит в камеру" data-fallback="🥣" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ВОЛОНТЁРСТВО ================= -->
+  <section class="section" id="volunteer">
+    <div class="container">
+      <div class="section-head">
+        <h2>Не можете взять питомца? Помогите руками</h2>
+        <p class="lead">Волонтёром может стать любой взрослый. Выберите, сколько времени готовы уделять, — мы подберём задачу.</p>
+      </div>
+      <div class="ways">
+        <div class="way"><div class="way-icon" aria-hidden="true">🦮</div><div><h3>Выгул собак</h3><p>Пара часов в выходные — и собака счастлива весь день.</p></div></div>
+        <div class="way"><div class="way-icon" aria-hidden="true">🏡</div><div><h3>Передержка</h3><p>Поселите животное у себя на время, пока мы ищем ему постоянный дом.</p></div></div>
+        <div class="way"><div class="way-icon" aria-hidden="true">📸</div><div><h3>Фото и соцсети</h3><p>С хорошими фотографиями питомцы находят хозяев в разы быстрее.</p></div></div>
+        <div class="way"><div class="way-icon" aria-hidden="true">🚗</div><div><h3>Автоволонтёрство</h3><p>Отвезти питомца к ветеринару или на встречу с будущими хозяевами.</p></div></div>
+      </div>
+      <a class="btn btn-ghost" href="mailto:info@lapa-pomoshchi.example?subject=Хочу%20стать%20волонтёром">Написать координатору</a>
+    </div>
+  </section>
+
+  <!-- ================= МИНИ-ИГРА ================= -->
+  <section class="section deep" id="game">
+    <div class="container">
+      <div class="section-head">
+        <h2>Кот-прыгун</h2>
+        <p class="lead">Рыжик сторожит миски с кормом, а мыши бегут прямо на него. Помогите ему перепрыгнуть всех: за каждые 5 мышей приют получает виртуальную миску корма.</p>
+      </div>
+
+      <div class="game-top">
+        <div class="hud">
+          <div><small>Счёт</small><b id="score">0</b></div>
+          <div><small>Рекорд</small><b id="best">0</b></div>
+          <div><small>Миски</small><b id="bowls">0</b></div>
+        </div>
+        <button class="btn btn-donate btn-sm" type="button" id="startBtn">Играть</button>
+      </div>
+
+      <div class="canvas-box">
+        <canvas id="gameCanvas" tabindex="0" role="img" aria-label="Игра: рыжий кот перепрыгивает бегущих мышей"></canvas>
+      </div>
+      <p class="game-hint">Прыгать: <kbd>Пробел</kbd>, <kbd>↑</kbd> или касание экрана. Удерживайте подольше — прыжок будет выше.</p>
+    </div>
+  </section>
+</main>
+
+<!-- ================= ПОДВАЛ ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#top" class="logo">
+          <svg viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><ellipse cx="20" cy="27" rx="10" ry="8.5"/><circle cx="8.5" cy="17" r="4.2"/><circle cx="15" cy="9.5" r="4.4"/><circle cx="25" cy="9.5" r="4.4"/><circle cx="31.5" cy="17" r="4.2"/></g></svg>
+          Лапа помощи
+        </a>
+        <p>Волонтёрский проект помощи бездомным кошкам и собакам.</p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li>ул. Добрая, 7</li>
+          <li><a href="tel:+79000000000">+7 900 000-00-00</a></li>
+          <li><a href="mailto:info@lapa-pomoshchi.example">info@lapa-pomoshchi.example</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Помочь</h4>
+        <ul>
+          <li><a href="#pets">Приютить питомца</a></li>
+          <li><a href="#food">Задонатить на корм</a></li>
+          <li><a href="#volunteer">Стать волонтёром</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">© 2026 Лапа помощи</p>
+  </div>
+</footer>
+
+<!-- ================= ОКНО «ПРИЮТИТЬ» ================= -->
+<div class="modal" id="adoptModal" role="dialog" aria-modal="true" aria-labelledby="adoptTitle">
+  <div class="modal-card">
+    <button class="modal-close" type="button" data-close aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </button>
+
+    <div id="adoptStep">
+      <div class="pet-head">
+        <div class="pet-thumb" id="adoptThumb"></div>
+        <div>
+          <h3 id="adoptTitle">Барсик ищет дом</h3>
+          <p id="adoptMeta">кот, 2 года</p>
+        </div>
+      </div>
+      <form id="adoptForm" novalidate>
+        <div class="field">
+          <label for="aName">Ваше имя</label>
+          <input id="aName" name="name" autocomplete="given-name" placeholder="Анна">
+        </div>
+        <div class="field">
+          <label for="aPhone">Телефон</label>
+          <input id="aPhone" name="phone" type="tel" autocomplete="tel" placeholder="+7 900 123-45-67">
+        </div>
+        <div class="field">
+          <label for="aHome">Где будет жить питомец</label>
+          <select id="aHome" name="home">
+            <option>В квартире</option>
+            <option>В частном доме</option>
+            <option>Пока не знаю</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="aMsg">Пара слов о себе</label>
+          <textarea id="aMsg" name="message" rows="3" placeholder="Есть ли другие животные, был ли опыт содержания"></textarea>
+        </div>
+        <label class="check"><input type="checkbox" id="aAgree"> Готов(а) познакомиться с волонтёром и подписать договор об ответственном содержании</label>
+        <p class="error" id="adoptError" role="alert"></p>
+        <button class="btn btn-adopt btn-block" type="submit">Отправить заявку</button>
+      </form>
+    </div>
+
+    <div class="success" id="adoptSuccess" hidden>
+      <div class="success-icon" aria-hidden="true">🏡</div>
+      <h3>Заявка отправлена</h3>
+      <p id="adoptSuccessText"></p>
+      <button class="btn btn-ghost" type="button" data-close>Хорошо</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ОКНО «ЗАДОНАТИТЬ НА КОРМ» ================= -->
+<div class="modal" id="donateModal" role="dialog" aria-modal="true" aria-labelledby="donateTitle">
+  <div class="modal-card">
+    <button class="modal-close" type="button" data-close aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </button>
+
+    <div id="donateStep">
+      <h3 id="donateTitle">Задонатить на корм</h3>
+      <p class="modal-sub">Выберите сумму. Всё уйдёт на корм для подопечных приюта.</p>
+      <div class="amounts" role="group" aria-label="Сумма">
+        <button class="amount" type="button" data-amount="100" aria-pressed="false">100 ₽</button>
+        <button class="amount" type="button" data-amount="300" aria-pressed="false">300 ₽</button>
+        <button class="amount" type="button" data-amount="500" aria-pressed="true">500 ₽</button>
+        <button class="amount" type="button" data-amount="1000" aria-pressed="false">1000 ₽</button>
+      </div>
+      <div class="field">
+        <label for="customAmount">Другая сумма, ₽</label>
+        <input id="customAmount" type="number" inputmode="numeric" min="10" step="10" placeholder="Например, 750">
+      </div>
+      <p class="calc" id="calc" aria-live="polite"></p>
+      <div class="field">
+        <label for="dEmail">Email для отчёта о закупке (необязательно)</label>
+        <input id="dEmail" type="email" autocomplete="email" placeholder="you@mail.ru">
+      </div>
+      <p class="error" id="donateError" role="alert"></p>
+      <button class="btn btn-donate btn-block" type="button" id="payBtn">Задонатить 500 ₽</button>
+    </div>
+
+    <div class="success" id="donateSuccess" hidden>
+      <div class="success-icon" aria-hidden="true">🥣</div>
+      <h3>Спасибо за помощь!</h3>
+      <p id="donateSuccessText"></p>
+      <button class="btn btn-ghost" type="button" data-close>Закрыть</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
