@@ -262,6 +262,50 @@ setAmount(amount);
 updateProgress();
 
 /* =========================================================
+   «НАПИСАТЬ КООРДИНАТОРУ»
+   ========================================================= */
+const volModal = $('#volunteerModal');
+const volForm  = $('#volForm');
+const volError = $('#volError');
+
+$$('[data-open-volunteer]').forEach(btn => btn.addEventListener('click', () => {
+  volForm.reset();
+  volError.textContent = '';
+  $('#volStep').hidden = false;
+  $('#volSuccess').hidden = true;
+  openModal(volModal);
+}));
+
+volForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const name    = $('#vName').value.trim();
+  const contact = $('#vContact').value.trim();
+  const isPhone    = contact.replace(/\D/g, '').length >= 10;
+  const isTelegram = /^@?[a-zA-Z0-9_]{5,}$/.test(contact);
+
+  if (name.length < 2) { volError.textContent = 'Введите имя — хотя бы 2 буквы.'; $('#vName').focus(); return; }
+  if (!isPhone && !isTelegram) { volError.textContent = 'Укажите телефон или ник в Telegram, например @username, чтобы координатор мог ответить.'; $('#vContact').focus(); return; }
+
+  // Здесь сообщение можно отправить на сервер или в Telegram-бота:
+  // fetch('/api/volunteer', { method: 'POST', body: JSON.stringify({ name, contact, way: $('#vWay').value, message: $('#vMsg').value }) })
+
+  $('#volSuccessText').textContent = `${name}, спасибо! Координатор свяжется с вами в течение дня.`;
+  $('#volStep').hidden = true;
+  $('#volSuccess').hidden = false;
+  $('#volSuccess .btn').focus();
+});
+
+// Кнопка «Скопировать» рядом с почтой
+$$('[data-copy]').forEach(btn => btn.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(btn.dataset.copy);
+    toast('Адрес скопирован');
+  } catch (err) {
+    toast(`Адрес: ${btn.dataset.copy}`); // если браузер не дал доступ к буферу обмена
+  }
+}));
+
+/* =========================================================
    МИНИ-ИГРА «КОТ-ПРЫГУН»
    ========================================================= */
 (() => {

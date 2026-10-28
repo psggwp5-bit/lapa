@@ -240,6 +240,11 @@ kbd{font-family:inherit;font-size:.85em;padding:1px 7px;border-radius:6px;backgr
 .success-icon{font-size:3rem;line-height:1;margin-bottom:12px}
 .success p{color:var(--muted)}
 
+.contact-alt{margin:18px 0 0;font-size:.93rem;color:var(--muted)}
+.contact-alt a{color:var(--text);font-weight:600}
+.copy-btn{margin-left:6px;padding:4px 10px;border:0;border-radius:8px;background:var(--surface-2);color:var(--text);font-size:.85rem;font-weight:600;cursor:pointer}
+.copy-btn:hover{background:var(--line)}
+
 .toast{position:fixed;left:50%;bottom:20px;z-index:200;max-width:calc(100% - 32px);padding:14px 22px;border-radius:14px;background:var(--text);color:var(--bg);font-weight:600;pointer-events:none;opacity:0;visibility:hidden;transform:translate(-50%,calc(100% + 40px));transition:transform .3s ease,opacity .3s,visibility .3s}
 .toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
 

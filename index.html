@@ -127,7 +127,7 @@
         <div class="way"><div class="way-icon" aria-hidden="true">📸</div><div><h3>Фото и соцсети</h3><p>С хорошими фотографиями питомцы находят хозяев в разы быстрее.</p></div></div>
         <div class="way"><div class="way-icon" aria-hidden="true">🚗</div><div><h3>Автоволонтёрство</h3><p>Отвезти питомца к ветеринару или на встречу с будущими хозяевами.</p></div></div>
       </div>
-      <a class="btn btn-ghost" href="mailto:info@lapa-pomoshchi.example?subject=Хочу%20стать%20волонтёром">Написать координатору</a>
+      <button class="btn btn-ghost" type="button" data-open-volunteer>Написать координатору</button>
     </div>
   </section>
 
@@ -273,6 +273,57 @@
       <h3>Спасибо за помощь!</h3>
       <p id="donateSuccessText"></p>
       <button class="btn btn-ghost" type="button" data-close>Закрыть</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= ОКНО «НАПИСАТЬ КООРДИНАТОРУ» ================= -->
+<div class="modal" id="volunteerModal" role="dialog" aria-modal="true" aria-labelledby="volTitle">
+  <div class="modal-card">
+    <button class="modal-close" type="button" data-close aria-label="Закрыть">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+    </button>
+
+    <div id="volStep">
+      <h3 id="volTitle">Написать координатору</h3>
+      <p class="modal-sub">Расскажите, как хотите помогать. Координатор ответит в течение дня.</p>
+      <form id="volForm" novalidate>
+        <div class="field">
+          <label for="vName">Ваше имя</label>
+          <input id="vName" name="name" autocomplete="given-name" placeholder="Анна">
+        </div>
+        <div class="field">
+          <label for="vContact">Телефон или ник в Telegram</label>
+          <input id="vContact" name="contact" placeholder="+7 900 123-45-67 или @username">
+        </div>
+        <div class="field">
+          <label for="vWay">Чем хотите помогать</label>
+          <select id="vWay" name="way">
+            <option>Выгул собак</option>
+            <option>Передержка</option>
+            <option>Фото и соцсети</option>
+            <option>Автоволонтёрство</option>
+            <option>Пока не знаю</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="vMsg">Сообщение (необязательно)</label>
+          <textarea id="vMsg" name="message" rows="3" placeholder="Когда вам удобно, есть ли опыт с животными"></textarea>
+        </div>
+        <p class="error" id="volError" role="alert"></p>
+        <button class="btn btn-adopt btn-block" type="submit">Отправить сообщение</button>
+      </form>
+      <p class="contact-alt">
+        Или напишите на почту: <a href="mailto:info@lapa-pomoshchi.example">info@lapa-pomoshchi.example</a>
+        <button class="copy-btn" type="button" data-copy="info@lapa-pomoshchi.example">Скопировать</button>
+      </p>
+    </div>
+
+    <div class="success" id="volSuccess" hidden>
+      <div class="success-icon" aria-hidden="true">💬</div>
+      <h3>Сообщение отправлено</h3>
+      <p id="volSuccessText"></p>
+      <button class="btn btn-ghost" type="button" data-close>Хорошо</button>
     </div>
   </div>
 </div>
